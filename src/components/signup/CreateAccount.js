@@ -13,7 +13,6 @@ class CreateAccount extends PureComponent {
 
   passwordTypeChange = () => {
     this.setState((prevState) => ({
-      ...prevState,
       passwordType: !prevState.passwordType,
     }));
   };

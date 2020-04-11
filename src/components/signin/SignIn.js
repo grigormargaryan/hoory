@@ -13,12 +13,6 @@ class SignIn extends PureComponent {
     passwordType: true,
   };
 
-  changeInput = ({ target: { name, value } }) => {
-    this.setState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
 
   signIn = () => {
     const { email, password } = this.state;
@@ -36,7 +30,6 @@ class SignIn extends PureComponent {
 
   passwordTypeChange = () => {
     this.setState((prevState) => ({
-      ...prevState,
       passwordType: !prevState.passwordType,
     }));
   };
@@ -75,7 +68,7 @@ class SignIn extends PureComponent {
                 <input
                   type="text"
                   onChange={(e) => {
-                    this.changeInput(e);
+                    this.setState({email:e.target.value});
                   }}
                   name="email"
                   placeholder="Email"
@@ -86,7 +79,7 @@ class SignIn extends PureComponent {
                 <input
                   type={passwordType ? 'password' : 'text'}
                   onChange={(e) => {
-                    this.changeInput(e);
+                    this.setState({password:e.target.value});
                   }}
                   name="password"
                   placeholder="Password"
