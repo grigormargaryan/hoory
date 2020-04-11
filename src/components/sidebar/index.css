@@ -1,0 +1,104 @@
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #6b54fb;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.dis-none {
+  display: none;
+}
+
+.logo-img {
+  width: 160px;
+}
+
+.log-div {
+  border-bottom: 1px solid #f7f7fa;
+  margin: 0 19px;
+}
+
+.checkbox-list {
+  justify-content: center;
+  display: grid;
+}
+
+.container {
+  position: relative;
+  padding-left: 30px;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+.flex-item {
+  width: 200px;
+  height: 60px;
+  color: white;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #00c67a;
+  border-color: #00c67a;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+}
